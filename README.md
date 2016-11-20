@@ -12,10 +12,12 @@
         url = 'http://m.dongqiudi.com/api/mobile/tab/1/archives'
         list = requests.get(url)
         return list.json()['list']['articles']
+        
 ###查找数据库文章aid是否已经存在，不存在返回None
     def check_id(aid):
         cur.execute("select sort from article where sort="+(aid))
         return cur.fetchone()
+        
 ###下载文章封面图片
     def download_pic(url):
 
@@ -38,6 +40,10 @@
             photo = photo.get('src')
         data = [str(title), str(title), str(author), float(time_1), str(content), photo,2]
         return data
+        
 ###正则截取文章aid
     def get_aid(x):
         return str(re.search(r'[0-9]{6,8}', str(x)).group())
+
+###使用crontab定时采集
+详细请看博客文章[Ansion 博客](http://ansion.cc/index.php/article/page/id/341.html) 
