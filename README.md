@@ -2,9 +2,9 @@
 使用python3配合requests、re、time、mysql、bs4等库，对懂球帝的文章进行有条件爬取，并存进远程mysql数据库中
 
 #程序详解：
-##采集懂球帝头条文章
-##存进mysql数据库
-##使用linux中的crontab每天定时执行
+##1.采集懂球帝头条文章
+##2.存进mysql数据库
+##3.使用linux中的crontab每天定时执行
 
 
 ###获得列表前n篇文章id
