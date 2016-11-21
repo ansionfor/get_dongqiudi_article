@@ -1,5 +1,6 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
+# Copyright [c] 2016 By Ansion All rights Reserved.
 import requests
 import time
 import re
