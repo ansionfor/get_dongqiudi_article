@@ -76,7 +76,7 @@ if __name__ == '__main__':
     for x in url_list:
         data = get_content(x)
         aid = get_aid(x)
-        if(1):                      # if(check_id(aid)==None):
+        if(check_id(aid)==None):
             data.append(int(aid))
             if(data[5] != ''):
                 print("文章保存成功", data[0])
@@ -87,7 +87,8 @@ if __name__ == '__main__':
                 continue
         else:
             print("文章已存在", data[0])
-
+    
+    # cur.close()
     # conn.close()
 
 #关闭数据库连接
