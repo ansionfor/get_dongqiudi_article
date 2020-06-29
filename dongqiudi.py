@@ -62,8 +62,8 @@ if __name__ == '__main__':
         'port': 3306,
         'database': ''
     }
-    # conn = connector.connect(**config)
-    # cur = conn.cursor(buffered=True)
+    conn = connector.connect(**config)
+    cur = conn.cursor(buffered=True)
 
     artlist = r'http://www.dongqiudi.com/share/article/'
     url_list = []
@@ -80,15 +80,15 @@ if __name__ == '__main__':
             data.append(int(aid))
             if(data[5] != ''):
                 print("文章保存成功", data[0])
-                # cur.execute("INSERT into article (title, summary, author, time, "
-                #             "content, photo_path, nav, sort) values"
-                #             " (%s,%s,%s,%s,%s,%s,%s, %s)", data)
+                cur.execute("INSERT into article (title, summary, author, time, "
+                            "content, photo_path, nav, sort) values"
+                            " (%s,%s,%s,%s,%s,%s,%s, %s)", data)
             else:
                 continue
         else:
             print("文章已存在", data[0])
     
-    # cur.close()
-    # conn.close()
+    cur.close()
+    conn.close()
 
 #关闭数据库连接
