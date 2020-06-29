@@ -70,7 +70,7 @@ if __name__ == '__main__':
 
     #循环获取5篇文章的aid
     for x in get_list()[:5]:
-        url_list.append(artlist+str(x['aid']))
+        url_list.append(artlist+str(x['id']))
 
     #循环check_id文章是否已经存在数据库，没有并且文章中有图片则插入数据库
     for x in url_list:
